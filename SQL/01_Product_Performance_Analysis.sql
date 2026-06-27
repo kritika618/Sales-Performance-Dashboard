@@ -1,5 +1,5 @@
-'''SQL
-
+```sql
+/*
 ===============================================================================
 Project        : Sales Performance Analytics Dashboard
 Module         : Product Performance Analysis
@@ -18,9 +18,9 @@ Business Domain:
 Product Analytics
 
 ===============================================================================
+*/
 
-
-
+/*
 ===============================================================================
 TABLE OF CONTENTS
 ===============================================================================
@@ -35,16 +35,17 @@ TABLE OF CONTENTS
 8. Average Order Value by Product
 
 ===============================================================================
+*/
 
 
-==============================================================================
+/*==============================================================================
 1. Business Question:
 Which products generate the highest sales?
 
 Business Purpose:
 Identify products generating the highest sales to support inventory planning,
 product strategy, and executive reporting.
-==============================================================================
+==============================================================================*/
 
 SELECT
     Product_ID,
@@ -61,14 +62,14 @@ LIMIT 10;
 
 
 
-==============================================================================
+/*==============================================================================
 2. Business Question:
 Which products generate the highest profit?
 
 Business Purpose:
 Identify the most profitable products to support pricing decisions and
 portfolio optimization.
-==============================================================================
+==============================================================================*/
 
 SELECT
     Product_ID,
@@ -85,14 +86,14 @@ LIMIT 10;
 
 
 
-==============================================================================
+/*==============================================================================
 3. Business Question:
 Which products generate losses?
 
 Business Purpose:
 Identify products generating negative profit for further investigation and
 profitability improvement initiatives.
-==============================================================================
+==============================================================================*/
 
 SELECT
     Product_ID,
@@ -108,14 +109,14 @@ LIMIT 10;
 
 
 
-==============================================================================
+/*==============================================================================
 4. Business Question:
 Which product categories contribute the highest revenue?
 
 Business Purpose:
 Evaluate revenue contribution by product category to support business planning
 and investment decisions.
-==============================================================================
+==============================================================================*/
 
 SELECT
     Category,
@@ -129,14 +130,14 @@ ORDER BY
 
 
 
-==============================================================================
+/*==============================================================================
 5. Business Question:
 Which product categories contribute the highest profit?
 
 Business Purpose:
 Identify the most profitable product categories to optimize product portfolio
 and maximize profitability.
-==============================================================================
+==============================================================================*/
 
 SELECT
     Category,
@@ -150,14 +151,14 @@ ORDER BY
 
 
 
-==============================================================================
+/*==============================================================================
 6. Business Question:
 Which products are growing or declining over time?
 
 Business Purpose:
 Monitor month-over-month product performance to identify products with
 increasing demand and products experiencing declining sales.
-==============================================================================
+==============================================================================*/
 
 SELECT
     *,
@@ -204,14 +205,14 @@ FROM (
 
 
 
-==============================================================================
+/*==============================================================================
 7. Business Question:
 What percentage of total sales comes from each product?
 
 Business Purpose:
 Measure each product's contribution to total business revenue and identify
 high-impact products.
-==============================================================================
+==============================================================================*/
 
 SELECT
     Product_Name,
@@ -233,7 +234,7 @@ GROUP BY
 
 
 
-==============================================================================
+/*==============================================================================
 8. Business Question:
 Which products have the highest average order value?
 
@@ -260,7 +261,7 @@ ORDER BY
 
 
 
-
+/*
 ===============================================================================
 END OF MODULE
 
@@ -271,6 +272,5 @@ Business Questions Answered : 8
 Project : Sales Performance Analytics Dashboard
 
 ===============================================================================
-
-
-
+*/
+```
