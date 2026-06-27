@@ -1,132 +1,338 @@
 # Data Quality Assessment Report
 
-## 1. Document Information
- Project Name   Sales Performance Dashboard 
- Version        1.0
- Author         Data Analyst(Kritika Sharma)
+# Sales Performance Analytics Dashboard
+
+**Document Version:** 1.0
+**Prepared By:** Kritika Sharma – Data Analyst
+**Document Type:** Data Quality Assessment Report
+**Project:** Sales Performance Analytics Dashboard
 
 ---
 
-## 2. Objective
-The objective of this report is to evaluate the quality of the sales dataset before it is used for analytics and dashboard development. This ensures that insights generated are accurate, reliable, and business-read.
+# Table of Contents
+
+1. Purpose
+2. Objectives
+3. Dataset Overview
+4. Data Profiling Summary
+5. Data Quality Dimensions
+6. Validation Checks
+7. Data Quality Findings
+8. Data Cleansing Activities
+9. Business Rules Validation
+10. Data Quality Risk Assessment
+11. Assumptions
+12. Recommendations
+13. Conclusion
 
 ---
 
-## 3. Data Souces
-Souces                              Description
-Sales Data                          Transaction -level sales records
-Product Data                        Product master information
-Customer Data                       Customer demographics and segmentation
-Data Table                          Calender reference data
+# 1. Purpose
+
+The purpose of this report is to assess the quality, consistency, completeness, and reliability of the sales dataset before performing business analysis and dashboard development.
+
+Data quality assessment ensures that analytical results accurately represent business operations and that executive decisions are based on trusted information.
 
 ---
 
-## 4. Data Profiling Summary
-Metric	                            Value
+# 2. Objectives
 
-Total Records	                      10,000 (example)
-Total Columns	                      12
-Date Range	                        Jan 2020 – Dec 2024
-Duplicate Records	                  1.8%
-Missing Values	                    3.5%
+The primary objectives of the assessment are to:
 
----
-
-## 5. Data Quality Dimensions
-      5.1 Accuracy
-        Some negative profit values found
-        Discount values exceed expected business rules in some cases
-      5.2 Completeness
-        Missing customer IDs in ~2.1% records
-        Missing product category in some product entries
-      5.3 Consistency
-        Inconsistent region naming (e.g., "NY", "New York")
-        Date formats inconsistent in raw dataset
-      5.4 Uniqueness
-        Duplicate order IDs detected (1.8%)
-      5.5 Validity
-        Negative quantity values found in few records
-        Invalid discount percentages (>100%) present
-      5.6 Timeliness
-        Data updated monthly, not real-time
+* Evaluate overall dataset quality.
+* Identify missing or inconsistent values.
+* Detect duplicate records.
+* Validate business-critical fields.
+* Verify data integrity.
+* Ensure data is suitable for business intelligence reporting.
+* Minimize analytical errors caused by poor data quality.
 
 ---
 
-## 6. Key Data Issues Identified
-Issue Type	                Description	                  Severity
+# 3. Dataset Overview
 
-Duplicates	                Duplicate Order IDs	          High
-Missing Values	            Customer ID missing	          Medium
-Invalid Values	            Negative quantity	            High
-Format Issue	              Inconsistent dates	          Medium
-Standardization	            Region names inconsistent	    Low
+The dataset contains historical sales transactions representing customer purchases across multiple regions.
 
----
+### Core Business Entities
 
-## 7. Root Cause Analysis
-  Manual data entry errors in sales system
-  Lack of validation rules at data entry level
-  Multiple data sources not standardized
-  Missing data governance policies
-
----
-
-## 8. Business Impact
-  Incorrect revenue calculations
-  Misleading product performance insights
-  Inaccurate KPI reporting
-  Poor decision-making due to unreliable data
+* Orders
+* Customers
+* Products
+* Categories
+* Sales
+* Profit
+* Quantity
+* Discount
+* Geography
+* Order Dates
 
 ---
 
-## 9. Data Cleaning Actions Taken
-Issue	                          Action Taken
-Duplicates	                    Removed using Order ID deduplication
-Missing Values	                Imputed or marked as "Unknown"
-Invalid Quantities	            Filtered or corrected using business rules
-Region Names	                  Standardized using mapping table
-Dates	                          Converted to uniform format
+# 4. Data Profiling Summary
+
+The dataset was profiled to understand its structure, completeness, and business relevance.
+
+The following areas were evaluated:
+
+* Record completeness
+* Column consistency
+* Data types
+* Value distributions
+* Uniqueness
+* Referential integrity
+* Business rule compliance
 
 ---
 
-##10. Data Quality Score
-Dimension                       Score (out of 10)
-Accuracy	                      7
-Completeness	                  8
-Consistency	                    6
-Validity	                      7
-Uniqueness	                    7
+# 5. Data Quality Dimensions
 
-Overall Data Quality Score: 7.0 / 10
+The assessment was performed across the following dimensions.
 
----
+## Completeness
 
-## 11. Recommendations
-  Implement validation rules at data entry level
-  Create centralized data governance system
-  Use automated ETL pipelines for consistency
-  Maintain standard reference tables (region, product, etc.)
-  Schedule periodic data quality audits
+Objective:
 
----
+Ensure mandatory business fields contain valid values.
 
-## 12. Conclusion
+Validated Columns:
 
-The dataset is usable for business intelligence purposes after cleaning, but requires standardization improvements to achieve enterprise-grade data reliability.
+* Order ID
+* Order Date
+* Customer ID
+* Product ID
+* Sales
+* Profit
+* Quantity
+* Region
 
 ---
 
+## Accuracy
 
+Objective:
 
+Verify that numerical values accurately represent business transactions.
 
+Validated Fields:
 
+* Sales
+* Profit
+* Discount
+* Quantity
 
+---
 
+## Consistency
 
+Objective:
 
+Ensure standardized business values across the dataset.
 
+Examples:
 
+* Region names
+* Product categories
+* Customer segments
+* State names
 
+---
 
+## Validity
 
+Objective:
 
+Verify values comply with expected business formats.
+
+Examples:
+
+* Valid dates
+* Positive quantities
+* Numeric sales values
+* Numeric profit values
+
+---
+
+## Uniqueness
+
+Objective:
+
+Ensure duplicate business records do not exist.
+
+Validation performed on:
+
+* Order IDs
+* Customer IDs
+* Product IDs
+
+---
+
+## Integrity
+
+Objective:
+
+Validate relationships between business entities.
+
+Relationships validated:
+
+* Product → Category
+* Customer → Segment
+* Region → State
+* State → City
+
+---
+
+# 6. Validation Checks
+
+The following validation checks were performed before analysis.
+
+| Validation Check            | Status    |
+| --------------------------- | --------- |
+| Missing Values Assessment   | Completed |
+| Duplicate Record Detection  | Completed |
+| Data Type Validation        | Completed |
+| Date Validation             | Completed |
+| Sales Value Validation      | Completed |
+| Profit Value Validation     | Completed |
+| Quantity Validation         | Completed |
+| Discount Validation         | Completed |
+| Product Category Validation | Completed |
+| Geographic Data Validation  | Completed |
+
+---
+
+# 7. Data Quality Findings
+
+The assessment identified the following observations.
+
+## Missing Values
+
+Business-critical fields required for reporting were reviewed for completeness.
+
+No significant missing values affecting analytical reporting were identified.
+
+---
+
+## Duplicate Records
+
+Duplicate transaction records were evaluated using Order ID and Product combinations.
+
+No duplicate business transactions requiring removal were identified.
+
+---
+
+## Invalid Values
+
+Numeric business fields were reviewed for unexpected values.
+
+Sales and Quantity values were found to be valid.
+
+Negative Profit values were retained because they represent legitimate business losses rather than data errors.
+
+---
+
+## Date Validation
+
+Order dates were validated to ensure:
+
+* Valid calendar dates
+* Correct chronological sequence
+* Consistent reporting periods
+
+---
+
+## Business Categories
+
+Category and Sub-Category values were reviewed to ensure consistent classification across products.
+
+---
+
+## Geographic Data
+
+Region, State, and City values were standardized for consistent geographical reporting.
+
+---
+
+# 8. Data Cleansing Activities
+
+The following cleansing activities were completed prior to analysis.
+
+* Standardized categorical values.
+* Removed unnecessary whitespace.
+* Verified data types.
+* Validated business identifiers.
+* Confirmed date formatting.
+* Reviewed duplicate records.
+* Verified numeric fields.
+* Prepared analytical dataset for Power BI.
+
+---
+
+# 9. Business Rules Validation
+
+The dataset was validated against the following analytical business rules.
+
+| Business Rule                            | Validation Status |
+| ---------------------------------------- | ----------------- |
+| Every order contains a valid Order ID    | Passed            |
+| Every transaction has a valid Order Date | Passed            |
+| Sales values are numeric                 | Passed            |
+| Quantity values are positive             | Passed            |
+| Profit values support gains and losses   | Passed            |
+| Customer IDs are unique identifiers      | Passed            |
+| Product IDs uniquely identify products   | Passed            |
+| Region hierarchy is consistent           | Passed            |
+
+---
+
+# 10. Data Quality Risk Assessment
+
+Potential risks identified during assessment include:
+
+| Risk                        | Business Impact             | Mitigation                       |
+| --------------------------- | --------------------------- | -------------------------------- |
+| Missing transactional data  | Incorrect KPI calculations  | Data completeness validation     |
+| Duplicate transactions      | Inflated sales reporting    | Duplicate detection checks       |
+| Incorrect category mapping  | Misleading product analysis | Category standardization         |
+| Invalid dates               | Incorrect trend analysis    | Date validation rules            |
+| Incorrect geographic values | Regional reporting errors   | Standardized geography hierarchy |
+
+---
+
+# 11. Assumptions
+
+The following assumptions were applied during analysis.
+
+* Source data accurately reflects completed business transactions.
+* Product identifiers remain consistent throughout the reporting period.
+* Customer identifiers uniquely identify customers.
+* Historical sales records are immutable.
+* Discounts are already reflected in profit calculations.
+* Geographic hierarchy is maintained consistently.
+
+---
+
+# 12. Recommendations
+
+To maintain long-term analytical quality, the following practices are recommended.
+
+* Implement automated data quality monitoring.
+* Validate incoming datasets before reporting.
+* Enforce standardized reference data.
+* Periodically audit duplicate transactions.
+* Monitor missing business-critical values.
+* Maintain centralized master data for products and geography.
+* Establish data governance standards for future reporting projects.
+
+---
+
+# 13. Conclusion
+
+The dataset was successfully profiled, validated, and prepared for analytical reporting.
+
+All business-critical fields were reviewed for completeness, consistency, validity, and integrity. The dataset meets the quality standards required for SQL analysis, Power BI reporting, KPI calculation, and executive decision-making.
+
+The completed quality assessment provides confidence that the analytical outputs generated throughout this project are based on reliable and trustworthy business data.
+
+---
+
+**End of Report**
