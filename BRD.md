@@ -7,6 +7,7 @@
 **Document Type:** Business Requirements Document (BRD)
 **Prepared By:** Kritika Sharma – Data Analyst
 **Status:** Completed (Portfolio Project)
+**Last Updated:** June 2026
 
 ---
 
